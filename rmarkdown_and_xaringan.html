@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Walking through RMarkdown</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Erik Amézquita" />
+    <meta name="date" content="2020-05-11" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="gallery.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Walking through RMarkdown
+## with xaringan
+### Erik Amézquita
+### Computational Mathematics, Science and Engineering <br> Michigan State University
+### 2020-05-11
+
+---
+
+
+
+
+class: center, middle
+
+# Xaringan
+
+RMarkdown + [remark.js](https://remarkjs.com) = Beautiful presentations
+
+---
+class: inverse
+
+background-image: url(https://camo.githubusercontent.com/ddf949ff33a75355c0dc6bddc0e767c01cfc7dbd/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f656d6974616e616b612f6e696e6a612d7468656d65406d61737465722f646f63732f696d616765732f6b756e6f696368692d73686f77636173652e676966)
+background-size: 850px 470px
+
+### Produce highly customizable slides
+
+.footnote[
+Above is the `kunochi` style by [Emi Tanaka](https://emitanaka.org/). Click [here](https://emitanaka.org/ninja-theme/themes/kunoichi/kunoichi-theme-example.html) for the actual slides.
+]
+
+???
+
+Image credit: [Contributed themes](https://github.com/yihui/xaringan/wiki/Themes)
+
+---
+
+# Hello World
+
+Install the **xaringan** package as usual:
+
+
+```r
+install.packages("xaringan")
+```
+
+--
+
+- If using RStudio, find a generous sample presentation following `File -&gt; New File -&gt; R Markdown -&gt; From Template -&gt; Ninja Presentation`
+
+--
+
+- `Knit` the generated `.Rmd` file as usual
+
+--
+
+- Or use the [RStudio Addin](https://rstudio.github.io/rstudioaddins/) "Infinite Moon Reader" to live preview the slides
+    - Every time you update and save the Rmd document, the slides will be automatically reloaded in RStudio Viewer.
+    - Also works for all HTML-based RMarkdown presentations (I think.)
+
+--
+
+- More details on `xaringan` usage [here](https://bookdown.org/yihui/rmarkdown/xaringan.html)
+
+---
+
+# remark.js
+
+Create a new slide
+- Use `---` to delimit slides
+- Use `--` in between for incremental slides
+- Add presenter notes with `???`
+
+--
+
+.left[left alignment with `.left[]`]
+.center[centered with `.center[]`]
+.right[right flush with `.right[]`]
+
+--
+
+- Presenter mode is supported by pressing `p`
+
+--
+
+- Press `h` or `?` to see more shortcuts
+
+--
+- Go through the [remark.js Wiki](https://github.com/gnab/remark/wiki) for more details
+
+.footnote[footnotes with `.footnote[]`]
+
+---
+class: inverse, middle, center
+
+&lt;blockquote class="imgur-embed-pub" lang="en" data-id="3DM4P7Y" data-context="false"&gt;&lt;a href="//imgur.com/3DM4P7Y"&gt;The Owl and the Woodpecker, Intimidation is an Art&lt;/a&gt;&lt;/blockquote&gt;&lt;script async src="//s.imgur.com/min/embed.js" charset="utf-8"&gt;&lt;/script&gt;
+
+---
+
+class: inverse, middle, center
+
+# Using xaringan
+
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4F4qzPbcFiA?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+# ioslides vs xaringan
+
+--
+
+.pull-left[
+
+**Ioslides**
+
+- pandoc power: 
+    - interchangeable format: ready to make a slidy, PDF or word
+    - Reference management is supported
+- Works out of the box with rmarkdown (ostensibly)
+- Presentation is self-contained: easier to host
+- Lack of CSS repositories
+- Not as customizable
+]
+
+--
+
+.pull-right[
+
+**xaringan**
+
+- Much more customizable
+- Available collection of ready-made CSSs
+- Can highlight code
+- Needs an extra bit of initial configuration
+- Presentation is **not** self-contained, which could be troublesome
+- pandoc power is lost
+- python functionality is finnicky
+- Printing PDF slides might be troublesome (see [decktape](https://github.com/astefanutti/decktape))
+]
+
+--
+
+Both approaches keep the simplicity of markdown formating, the capacity to embbed R (and other languages), and `\(\LaTeX\)` support.
+
+---
+
+class: inverse, center, middle
+
+# Back to our previous ioslides presentation
+
+---
+
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1200px-R_logo.svg.png)
+background-size: 100px 80px
+background-position: 95% 5%
+
+## Snapshot: Staff vs Faculty
+
+
+
+```r
+regression &lt;- linregression_traditional(data,X,Y,carnegie)
+```
+
+&lt;img src="rmarkdown_and_xaringan_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" /&gt;
+
+```r
+summary_reg &lt;- summary(regression)
+*rsquared &lt;- summary_reg$r.squared
+*coeffs &lt;- summary_reg$coefficients
+```
++ We observe an `\(R^2\)` value of 0.9072477, which is quite high
++ For every research/instructional employee, we have 3 staff employees!
+
+---
+
+background-image: url(https://insidehpc.com/wp-content/uploads/2016/01/Python-logo-notext.svg_.png)
+background-size: 100px
+background-position: 95% 5%
+
+## Gamebreaker: Execute more than just R
+
++ Solve an ODE with `python3` via `scipy.integrate.odeint` 
+
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.integrate import odeint
+
+def f(y, t, k=0.2):
+  r=(1+2*np.sin(t)-np.cos(t))/5
+  return r*y-k
+
+t  = np.linspace(0, 20., 1000)
+
+for i in range(6):
+    y0=0.1*i+0.5
+    soln = odeint(f, y0, t)
+    plt.plot(t,soln, label="y0="+str(y0))
+
+plt.xlabel("time")
+plt.ylabel("population")
+plt.title("Population Dynamics")
+plt.legend()
+plt.grid()
+```
+---
+
+## Sure enough, we get python plots
+
++ ODE `\(\frac{dy}{dt} = r(t)y-k, \quad y(0)=y_0\)`
++ Growth rate `\(r(t) = \frac{1}{5}(1+2\sin t - \cos t)\)`
++ Constant predation rate `\(k=\frac{1}{5}\)`
++ Explore which initial population value `\(y_0\)` is critical to avoid extintion.
+
+&lt;img src="rmarkdown_and_xaringan_files/figure-html/unnamed-chunk-6-1.png" width="500" height="350" style="display: block; margin: auto;" /&gt;
+---
+# Since we're going full HTML...
+
+&lt;div class="row"&gt;
+  &lt;div class="column" style="max-width:20%"&gt;
+    &lt;img src="figs/S017_L3_20.png"&gt;
+    &lt;img src="figs/S019_L0_1_01.png"&gt;
+  &lt;/div&gt;
+  &lt;div class="column" style="max-width:20%"&gt;
+    &lt;img src="figs/S017_L3_21.png"&gt;
+    &lt;img src="figs/S019_L0_1_02.png"&gt;
+  &lt;/div&gt;
+  &lt;div class="column" style="max-width:20%"&gt;
+    &lt;img src="figs/S017_L3_22.png"&gt;
+    &lt;img src="figs/S019_L0_1_03.png"&gt;
+  &lt;/div&gt;
+  &lt;div class="column" style="max-width: 40%; padding: 0 0 0 25px;"&gt;
+    &lt;p&gt; A kind of crude tab environment is defined in the CSS&lt;/p&gt;
+    &lt;p&gt; Then rest is to write straight HTML markup. &lt;/p&gt;
+    &lt;p&gt; The infinite_moon reader does help a little bit.  &lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt; The markdown convenience is lost. &lt;/li&gt;
+      &lt;li&gt; Minimize this kind of slides: text next to images. &lt;/li&gt;
+    &lt;ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

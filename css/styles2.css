@@ -1,0 +1,61 @@
+slides > slide.title-slide hgroup h1 {
+  color: IndianRed;
+  font-size: 3em;
+  line-height: 1em;
+}
+
+slides > slide.segue hgroup h2 {
+  color: LightYellow;
+  font-size: 2.2em;
+  line-height: 1em;
+  text-shadow: 2px 2px 5px Silver;
+}
+
+.codefont pre {
+    font-size: 0.5em;
+    line-height: 10px;
+}
+
+body {
+  background-color: GhostWhite;
+}
+
+h1,h2,h3,h4 {
+  color: FireBrick;
+  text-align: left;
+  border-left: 6px ridge red;
+  padding-left: 20px;
+  font-family: Palatino;
+  font-size: 2em;
+}
+
+p {
+  font-family: Tahoma;
+  font-size: 1.3em;
+  line-height: 1.1;
+}
+
+ul li{
+  font-family: Tahoma;
+  font-size: 1em;
+  line-height: 1.6;
+  list-style-type: square;
+}
+
+ol li {
+  font-family: Tahoma;
+  font-size: 1em;
+  line-height: 1.6;
+  list-style-type: upper-roman;
+}
+
+pre {
+   font-family: "courier new", courier, monospace;
+   font-size: 0.8em;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 12px
+}

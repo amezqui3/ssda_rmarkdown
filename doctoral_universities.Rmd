@@ -1,0 +1,87 @@
+---
+title: Walking through RMarkdown
+author: Erik Amézquita
+date: May 18th, 2020
+bibliography: biblio.bib
+csl: "csl/harvard-cite-them-right.csl"
+output: 
+  html_document:
+    css: "css/styles2.css"
+---
+
+```{r include=F}
+library(rmarkdown)
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(include = FALSE)
+knitr::opts_chunk$set(engine.path = list(
+  python = '/usr/bin/python3',
+  ruby = '/usr/bin/ruby'
+))
+```
+## Snapshot: Staff vs Faculty
+
+```{r include=T, echo=T, fig.height=4, fig.align='center'}
+source('utils/utils.R')
+data <- read.csv('data/college_data.csv')
+Y <- "Total.FTE.staff..DRVHR2018."
+X <- "Instructional..research.and.public.service.FTE..DRVHR2018."  
+ID <- "Institution.Name" 
+SZ <- "Total..enrollment..DRVEF2018." 
+carnegie <- "Carnegie.Classification..HD2018."
+landgrant <- "Land.Grant.Institution..HDNo0Yes8."
+sector <- "Sector.of.institution..HDPrivate0Public8."
+regression <- linregression_traditional(data,X,Y,carnegie)
+summary_reg <- summary(regression)
+rsquared <- summary_reg$r.squared
+coeffs <- summary_reg$coefficients
+```
++ We observe an $R^2$ value of `r rsquared`, which is quite high
++ For every research/instructional employee, we have `r round(coeffs[2,1])` staff employees!
+
+## Use `ggplot2` instead: nicer plots
+
+```{r include=T, echo=T, fig.height=4, fig.align='center'}
+foo <- ggplotRegression(data,Y,X,carnegie,sector,'US Doctoral Universities')
+foo[[1]]
+summary_reg <- summary(foo[[2]])
+rsquared <- summary_reg$r.squared
+coeffs <- summary_reg$coefficients
+```
+
++ We observe an $R^2$ value of `r rsquared`, which is quite high
++ For every research/instructional employee, we have `r round(coeffs[2,1])` staff employees!
+
+## Use `plotly` to get an interactive plot!
+
+- RMarkdown supports a number of different HTML widgets that breathe life into your data!
+- HTML widgets are based on Javascript
+    - **Do not** worry about it: **R** got your back.
+    - `plotly` works well with `ggplot2`.
+
+```{r include=T, echo=T, out.width='100%', fig.align='center'}
+ggplotly(foo[[1]], tooltip = c('id', 'enroll', 'x', 'y'))
+```
+
+- Find more information on how to make interactive plots [here](https://www.htmlwidgets.org/showcase_plotly.html).
+- _Might_ have issues when converting HTML widgets to PDF.
+- Snapshot of widget based on `phantomJS`.
+
+```{r eval=F, echo=T, include=T}
+library(webshot)
+webshot::install_phantomjs()
+```
+
+## Look for other possible correlations
+
+```{r include=T, echo=T, fig.height=4, fig.align='center'}
+X <- "Admissions.yield...men..DRVADM2018." 
+Y <- "Admissions.yield...women..DRVADM2018." 
+foo <- ggplotRegression(data,Y,X,carnegie,sector,'US Doctoral Universities')
+foo[[1]]
+summary_reg <- summary(foo[[2]])
+rsquared <- summary_reg$r.squared
+coeffs <- summary_reg$coefficients
+```
+
++ We observe an $R^2$ value of `r rsquared`, which is quite high
++ For every admitted male, we have `r round(coeffs[2,1])` admitted female.
