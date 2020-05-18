@@ -5,14 +5,14 @@ slides > slide.title-slide hgroup h1 {
 }
 
 slides > slide.segue hgroup h2 {
-  color: LightYellow;
+  color: White;
   font-size: 2.2em;
   line-height: 1em;
   text-shadow: 2px 2px 5px Silver;
 }
 
 .codefont pre {
-    font-size: 0.5em;
+    font-size: 0.9em;
     line-height: 10px;
 }
 
@@ -30,32 +30,39 @@ h1,h2,h3,h4 {
 }
 
 p {
-  font-family: Tahoma;
-  font-size: 0.8em;
+  font-family: Verdana;
+  font-size: 0.9em;
   line-height: 1.1;
+  color: black;
+  font-weight: bold;
 }
 
 ul li{
-  font-family: Tahoma;
-  font-size: 0.8em;
+  font-family: Verdana;
+  font-size: 0.9em;
   line-height: 1.3;
   list-style-type: square;
+  color: black;
 }
 
 ol li {
-  font-family: Tahoma;
-  font-size: 0.8em;
+  font-family: Verdana;
+  font-size: 0.9em;
   line-height: 1.3;
-  list-style-type: upper-roman;
+  list-style-type: lower-roman;
+  color: black;
 }
 
 pre {
-   font-family: "courier new", courier, monospace;
-   font-size: 0.8em;
+   font-family: "Lucida Console", Monaco, monospace;
+   font-size: 0.9em;
+   font-weight: bold;
+   background: WhiteSmoke;
+   color: #555555;
+   
 }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-  font-size: 12px
+::selection {
+    background-color: Navy;
+    color: White;
 }

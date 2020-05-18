@@ -1,0 +1,245 @@
+  [1] "UnitID"                                                                                                                                           
+  [2] "Institution.Name"                                                                                                                                 
+  [3] 
+  "Average.net.price.students.awarded.grant.or.scholarship.aid..2017.18..SFA1718."
+  [4] 
+  "Average.net.price..income.0.30.000..students.awarded.Title.IV.federal.financial.aid..2017.18..SFA1718."
+  [5] 
+  "Average.net.price..income.30.001.48.000..students.awarded.Title.IV.federal.financial.aid..2017.18..SFA1718."
+  [6] "Average.net.price..income.48.001.75.000..students.awarded.Title.IV.federal.financial.aid..2017.18..SFA1718." 
+  [7] "Average.net.price..income.75.001.110.000..students.awarded.Title.IV.federal.financial.aid..2017.18..SFA1718."      
+  [8] "Average.net.price..income.over.110.000..students.awarded.Title.IV.federal.financial.aid..2017.18..SFA1718."
+  [9] "Percent.of.full.time.first.time.undergraduates.awarded.any.financial.aid..SFA1718."                                                               
+ [10] "Average.amount.of.federal..state..local.or.institutional.grant.aid.awarded..SFA1718."                                                             
+ [11] "Percent.of.full.time.first.time.undergraduates.awarded.student.loans..SFA1718."                                                                   
+ [12] "Average.amount.of.student.loans.awarded.to.full.time.first.time.undergraduates..SFA1718."                                                         
+ [13] "Percent.of.full.time.first.time.undergraduates.awarded.federal..state..local.or.institutional.grant.aid..SFA1718."                                
+ [14] "State.abbreviation..HD2018."                                                                                                                      
+ [15] "Bureau.of.Economic.Analysis..BEA..regions..HD2018."                                                                                               
+ [16] "Sector.of.institution..HDPrivate0Public8."                                                                                                                  
+ [17] 
+ "Carnegie.Classification..HD2018."
+ [18] "Land.Grant.Institution..HDNo0Yes8."                                                                                                                 
+ [19] 
+ "Total.price.for.in.state.students.living.on.campus.2018.19..DRVIC2018."
+ [20] 
+ "Total.price.for.out.of.state.students.living.on.campus.2018.19..DRVIC2018."                  
+ [21] 
+ "Total.price.for.in.state.students.living.off.campus..not.with.family...2018.19..DRVIC2018."
+ [22] 
+ "Total.price.for.out.of.state.students.living.off.campus..not.with.family...2018.19..DRVIC2018."
+ [23] 
+ "Total.price.for.in.state.students.living.off.campus..with.family...2018.19..DRVIC2018."
+ [24] 
+ "Total.price.for.out.of.state.students.living.off.campus..with.family...2018.19..DRVIC2018."
+ [25] 
+ "Percent.admitted...total..DRVADM2018."
+ [26] 
+ "Percent.admitted...men..DRVADM2018."
+ [27] 
+ "Percent.admitted...women..DRVADM2018."
+ [28] 
+ "Admissions.yield...total..DRVADM2018."
+ [29] 
+ "Admissions.yield...men..DRVADM2018."
+ [30] 
+ "Admissions.yield...women..DRVADM2018."
+ [31] 
+ "Admissions.yield...full.time.men..DRVADM2018."
+ [32] 
+ "Admissions.yield...full.time.women..DRVADM2018."
+ [33] 
+ "Admissions.yield...full.time..DRVADM2018."
+ [34] 
+ "Undergraduate.enrollment..DRVEF2018."
+ [35] 
+ "Graduate.enrollment..DRVEF2018."
+ [36] 
+ "Full.time.graduate.enrollment..DRVEF2018."
+ [37] 
+ "Full.time.undergraduate.enrollment..DRVEF2018."
+ [38] 
+ "Percent.of.undergraduate.enrollment.that.are.American.Indian.or.Alaska.Native..DRVEF2018."
+ [39] 
+ "Percent.of.undergraduate.enrollment.that.are.Asian.Native.Hawaiian.Pacific.Islander..DRVEF2018."
+ [40] 
+ "Percent.of.undergraduate.enrollment.that.are.Asian..DRVEF2018."
+ [41]
+ "Percent.of.undergraduate.enrollment.that.are.Native.Hawaiian.or.Other.Pacific.Islander..DRVEF2018."
+ [42] 
+ "Percent.of.undergraduate.enrollment.that.are.Black.or.African.American..DRVEF2018."
+ [43] 
+ "Percent.of.undergraduate.enrollment.that.are.Hispanic.Latino..DRVEF2018."
+ [44] 
+ "Percent.of.undergraduate.enrollment.that.are.White..DRVEF2018."
+ [45] 
+ "Percent.of.undergraduate.enrollment.that.are.two.or.more.races..DRVEF2018."
+ [46] 
+ "Percent.of.undergraduate.enrollment.that.are.Race.ethnicity.unknown..DRVEF2018."
+ [47] "Percent.of.undergraduate.enrollment.that.are.Nonresident.Alien..DRVEF2018."                                                                       
+ [48] "Percent.of.undergraduate.enrollment.that.are.women..DRVEF2018."                                                                                   
+ [49] 
+ "Percent.of.graduate.enrollment.that.are.American.Indian.or.Alaska.Native..DRVEF2018."
+ [50] 
+ "Percent.of.graduate.enrollment.that.are.Asian.Native.Hawaiian.Pacific.Islander..DRVEF2018."
+ [51] 
+ "Percent.of.graduate.enrollment.that.are.Asian..DRVEF2018."
+ [52] 
+ "Percent.of.graduate.enrollment.that.are.Native.Hawaiian.or.Other.Pacific.Islander..DRVEF2018."
+ [53] 
+ "Percent.of.graduate.enrollment.that.are.Black.or.African.American..DRVEF2018."
+ [54] 
+ "Percent.of.graduate.enrollment.that.are.Hispanic.Latino..DRVEF2018."
+ [55] 
+ "Percent.of.graduate.enrollment.that.are.White..DRVEF2018."
+ [56] 
+ "Percent.of.graduate.enrollment.that.are.two.or.more.races..DRVEF2018."
+ [57] 
+ "Percent.of.graduate.enrollment.that.are.Race.ethnicity.unknown..DRVEF2018."
+ [58] 
+ "Percent.of.graduate.enrollment.that.are.Nonresident.Alien..DRVEF2018."
+ [59] 
+ "Percent.of.graduate.enrollment.that.are.women..DRVEF2018."
+ [60] 
+ "Number.of.first.time.undergraduates...in.state..DRVEF2018."
+ [61] 
+ "Percent.of.first.time.undergraduates...in.state..DRVEF2018."
+ [62] 
+ "Number.of.first.time.undergraduates...out.of.state..DRVEF2018."
+ [63] 
+ "Percent.of.first.time.undergraduates...out.of.state..DRVEF2018."
+ [64] 
+ "Number.of.first.time.undergraduates...foreign.countries..DRVEF2018."
+ [65] 
+ "Percent.of.first.time.undergraduates...foreign.countries..DRVEF2018."
+ [66] 
+ "Total..enrollment..DRVEF2018."     
+ [67] 
+ "Full.time.enrollment..DRVEF2018."   
+ [68] 
+ "Number.of.students.receiving.a.Doctor.s.degree..DRVC2018."
+ [69] 
+ "Number.of.students.receiving.a.Master.s.degree..DRVC2018."
+ [70] 
+ "Number.of.students.receiving.a.Bachelor.s.degree..DRVC2018."
+ [71] 
+ "Number.of.students.receiving.an.Associate.s.degree..DRVC2018."            
+ [72]
+ "Number.of.students.receiving.a.Postbaccalaureate.or.Post.master.s.certificate..DRVC2018."
+ [73] 
+ "Number.of.students.receiving.a.certificate.of.1.but.less.than.4.years..DRVC2018."
+ [74] 
+ "Number.of.students.receiving.a.certificate.of.less.than.1.year..DRVC2018."
+ [75] 
+ "Graduation.rate..Nonresident.alien..DRVGR2018."                                           
+ [76] 
+ "Graduation.rate..two.or.more.races..DRVGR2018."
+ [77]  
+ "Graduation.rate..White..non.Hispanic..DRVGR2018."
+ [78]  
+ "Graduation.rate..Race.ethnicity.unknown..DRVGR2018."
+ [79] 
+ "Graduation.rate..Hispanic..DRVGR2018."
+ [80] 
+ "Graduation.rate..Black..non.Hispanic..DRVGR2018."
+ [81] 
+ "Graduation.rate..Native.Hawaiian.or.Other.Pacific.Islander..DRVGR2018."
+ [82] 
+ "Graduation.rate..Asian..DRVGR2018." 
+ [83] 
+ "Graduation.rate..Asian.Native.Hawaiian.Other.Pacific.Islander..DRVGR2018."
+ [84] 
+ "Graduation.rate..American.Indian.or.Alaska.Native..DRVGR2018."
+ [85] 
+ "Graduation.rate..women..DRVGR2018." 
+ [86] 
+ "Graduation.rate..men..DRVGR2018."   
+ [87] 
+ "Graduation.rate..total.cohort..DRVGR2018."
+ [88] 
+ "Pell.Grant.recipients...Overall.graduation.rate.within.150.percent.of.normal.time..DRVGR2018."    
+ [89] 
+ "Did.not.receive.Pell.Grants.or.Subsidized.Stafford.Loans...Overall.graduation.rate.within.150.percent.of.normal.time..DRVGR2018."
+ [90] 
+ "Core.revenues..total.dollars..GASB...DRVF2018."
+ [91] 
+ "Tuition.and.fees.as.a.percent.of.core.revenues..GASB...DRVF2018."
+ [92] 
+ "State.appropriations.as.percent.of.core.revenues...GASB...DRVF2018."
+ [93] "Local.appropriations.as.a.percent.of.core.revenues..GASB...DRVF2018."                                                                             
+ [94] "Government.grants.and.contracts.as.a.percent.of.core.revenues..GASB...DRVF2018."                                                                  
+ [95] "Private.gifts..grants..and.contracts.as.a.percent.of.core.revenues..GASB...DRVF2018."                                                             
+ [96] "Investment.return.as.a.percent.of.core.revenues..GASB...DRVF2018."                                                                                
+ [97] "Other.revenues.as.a.percent.of.core.revenues..GASB...DRVF2018."                                                                                   
+ [98] "Revenues.from.tuition.and.fees.per.FTE..GASB...DRVF2018."                                                                                         
+ [99] "Revenues.from.state.appropriations.per.FTE..GASB...DRVF2018."                                                                                     
+[100] "Revenues.from.local.appropriations.per.FTE..GASB...DRVF2018."                                                                                     
+[101] "Revenues.from.government.grants.and.contracts.per.FTE..GASB...DRVF2018."                                                                          
+[102] "Revenues.from.private.gifts..grants..and.contracts.per.FTE..GASB...DRVF2018."                                                                     
+[103] "Revenues.from.investment.return.per.FTE..GASB...DRVF2018."                                                                                        
+[104] "Other.core.revenues.per.FTE..GASB...DRVF2018."                                                                                                    
+[105] "Core.expenses..total.dollars..GASB...DRVF2018."                                                                                                   
+[106] "Instruction.expenses.as.a.percent.of.total.core.expenses..GASB...DRVF2018."                                                                       
+[107] "Research.expenses.as.a.percent.of.total.core.expenses..GASB...DRVF2018."                                                                          
+[108] "Public.service.expenses.as.a.percent.of.total.core.expenses..GASB...DRVF2018."                                                                    
+[109] "Academic.support.expenses.as.a.percent.of.total.core.expenses..GASB...DRVF2018."                                                                  
+[110] "Student.service.expenses.as.a.percent.of.total.core.expenses..GASB...DRVF2018."                                                                   
+[111] "Institutional.support.expenses.as.a.percent.of.total.core.expenses..GASB...DRVF2018."                                                             
+[112] "Other.core.expenses.as.a.percent.of.total.core.expenses..GASB...DRVF2018."                                                                        
+[113] "Instruction.expenses.per.FTE...GASB...DRVF2018."                                                                                                  
+[114] "Research.expenses.per.FTE...GASB...DRVF2018."                                                                                                     
+[115] "Public.service.expenses.per.FTE..GASB...DRVF2018."                                                                                                
+[116] "Academic.support.expenses.per.FTE..GASB...DRVF2018."                                                                                              
+[117] "Student.service.expenses.per.FTE..GASB...DRVF2018."                                                                                               
+[118] "Institutional.support.expenses.per.FTE..GASB...DRVF2018."                                                                                         
+[119] "All.other.core.expenses.per.FTE..GASB...DRVF2018."                                                                                                
+[120] "Salaries.and.wages.for.core.expenses.as.a.percent.of.total.core.expenses..GASB...DRVF2018."                                                       
+[121] "Salaries.and.wages.for.instruction.as.a.percent.of.total.expenses.for.instruction..GASB...DRVF2018."                                              
+[122] "Salaries.and.wages.for.research.as.a.percent.of.total.expenses.for.research..GASB...DRVF2018."                                                    
+[123] "Salaries.and.wages.for.public.service.as.a.percent.of.total.expenses.for.public.service..GASB...DRVF2018."                                        
+[124] "Salaries.and.wages.for.academic.support.as.a.percent.of.total.expenses.for.academic.support..GASB...DRVF2018."                                    
+[125] "Salaries.and.wages.for.student.services.as.a.percent.of.total.expenses.for.student.services..GASB...DRVF2018."                                    
+[126] "Salaries.and.wages.for.institutional.support.as.a.percent.of.total.expenses.for.institutional.support..GASB...DRVF2018."                          
+[127] "Salaries.and.wages.for.other.core.expense.functions.as.a.percent.of.total.expenses.for.other.core.expense.functions..GASB...DRVF2018."            
+[128] "Total.salaries..wages..and.benefits.as.a.percent.of.total.expenses..GASB...DRVF2018."                                                             
+[129] "Total.salaries.and.wages.as.a.percent.of.total.expenses..GASB...DRVF2018."                                                                        
+[130] "Endowment.assets..year.end..per.FTE.enrollment..GASB...DRVF2018."                                                                                 
+[131] "Equity.ratio..GASB...DRVF2018."                                                                                                                   
+[132] "Total.FTE.staff..DRVHR2018."                                                                                                                      
+[133] "Instructional..research.and.public.service.FTE..DRVHR2018."                                                                                       
+[134] "Instructional.FTE..DRVHR2018."                                                                                                                    
+[135] "Research.FTE..DRVHR2018."                                                                                                                         
+[136] "Public.Service.FTE..DRVHR2018."                                                                                                                   
+[137] "Librarians..Curators..and.Archivists.Student.and.Academic.Affairs.and.Other.Education.Services.FTE..DRVHR2018."                                   
+[138] "Librarians..Curators..and.Archivists.FTE..DRVHR2018."                                                                                             
+[139] "Student.and.Academic.Affairs.and.Other.Education.Services.FTE..DRVHR2018."                                                                        
+[140] "Management.FTE..DRVHR2018."                                                                                                                       
+[141] "Business.and.Financial.Operations.FTE..DRVHR2018."                                                                                                
+[142] "Computer..Engineering..and.Science.FTE..DRVHR2018."                                                                                               
+[143] "Community.Service..Legal..Arts..and.Media.FTE..DRVHR2018."                                                                                        
+[144] "Healthcare.FTE..DRVHR2018."                                                                                                                       
+[145] "Service..sales..office.admin.support..natural.resources..construction..maintenance..production..transportation...materials.moving.FTE..DRVHR2018."
+[146] "Service.FTE..DRVHR2018."                                                                                                                          
+[147] "Sales.and.Related.FTE..DRVHR2018."                                                                                                                
+[148] "Office.and.Administrative.Support.FTE..DRVHR2018."                                                                                                
+[149] "Natural.Resources..Construction..and.Maintenance.FTE..DRVHR2018."                                                                                 
+[150] "Production..Transportation..and.Material.Moving.FTE..DRVHR2018."                                                                                  
+[151] "Average.salary.equated.to.9.months.of.full.time.instructional.staff...all.ranks..DRVHR2018."                                                      
+[152] "Average.salary.equated.to.9.months.of.full.time.instructional.staff...professors..DRVHR2018."                                                     
+[153] "Average.salary.equated.to.9.months.of.full.time.instructional.staff...associate.professors..DRVHR2018."                                           
+[154] "Average.salary.equated.to.9.months.of.full.time.instructional.staff...assistant.professors..DRVHR2018."                                           
+[155] "Average.salary.equated.to.9.months.of.full.time.instructional.staff...instructors..DRVHR2018."                                                    
+[156] "Average.salary.equated.to.9.months.of.full.time.instructional.staff...lecturers..DRVHR2018."                                                      
+[157] "Average.salary.equated.to.9.months.of.full.time.instructional.staff...No.academic.rank..DRVHR2018."                                               
+[158] "Salaries.and.wages.from.the.library.budget.as.a.percent.of.total.library.expenditures..DRVAL2018."                                                
+[159] "One.time.purchases.of.books..serial.backfiles..and.other.materials.as.a.percent.of.total.library.expenditures..DRVAL2018."                        
+[160] "Ongoing.commitments.to.subscriptions.as.a.percent.of.total.library.expenditures..DRVAL2018."                                                      
+[161] "Total.operations.and.maintenance.as.a.percent.of.total.library.expenditures..DRVAL2018."                                                          
+[162] "Total.library.expenditures.per.FTE..DRVAL2018."                                                                                                   
+[163] "Full.time..first.time.degree.certificate.seeking.students.required.to.live.on.campus..IC2018."                                                    
+[164] "Total.dormitory.capacity..IC2018."                                                                                                                
+[165] "Number.of.meals.per.week.in.board.charge..IC2018."                                                                                                
+[166] "Typical.room.charge.for.academic.year..IC2018."                                                                                                   
+[167] "Typical.board.charge.for.academic.year..IC2018."                                                                                                  
+[168] "Undergraduate.application.fee..IC2018."                                                                                                           
+[169] "Graduate.application.fee..IC2018."    

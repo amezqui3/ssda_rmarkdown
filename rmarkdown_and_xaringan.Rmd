@@ -6,7 +6,7 @@ institute: "Computational Mathematics, Science and Engineering <br> Michigan Sta
 date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
-    css: [default, default-fonts, "gallery.css"]
+    css: [default, default-fonts, "css/gallery.css"]
     chakra: 'libs/remark-latest.min.js'
     lib_dir: libs
     nature:
@@ -17,6 +17,7 @@ output:
 
 ```{r setup, include=FALSE}
 library(reticulate)
+library(knitr)
 
 # <!-- Copies an HTML dependency to a subdirectory of the given directory. The subdirectory name willbename-version(for example, "outputDir/jquery-1.11.0"). You may setoptions(htmltools.dir.version= FALSE)to suppress the version number in the subdirectory name. -->
 options(htmltools.dir.version = FALSE)
@@ -109,7 +110,7 @@ Create a new slide
 ---
 class: inverse, middle, center
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="3DM4P7Y" data-context="false"><a href="//imgur.com/3DM4P7Y">The Owl and the Woodpecker, Intimidation is an Art</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+<blockquote class="imgur-embed-pub" lang="en" data-id="3DM4P7Y" data-context="false"><a href="https://imgur.com/3DM4P7Y">The Owl and the Woodpecker, Intimidation is an Art</a></blockquote><script async src="https://s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 ---
 
@@ -256,6 +257,34 @@ plt.legend()
 plt.grid()
 plt.show()
 ```
+---
+
+# HTML widgets
+
++ Variety of interactive plots [here](https://www.htmlwidgets.org/)
+
+```{r echo=TRUE}
+library(rgl)
+mfrow3d(nr = 1, nc = 2, sharedMouse = TRUE)  
+plot3d(mtcars[, 1:3], type = "s",)  
+plot3d(mtcars[, 4:6], type = "s")
+rglwidget()
+```
+
+---
+
+# Images: the hacky bit
+
+.pull-left[
+
+![](figs/S017_L3_20.png)
+]
+.pull-right[
++ Place one image side by side with text.
++ Cannot resize the figure.
++ Things get hackier to have multiple images and text.
+]
+
 ---
 # Since we're going full HTML...
 

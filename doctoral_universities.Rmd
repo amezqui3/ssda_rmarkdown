@@ -9,28 +9,48 @@ output:
     css: "css/styles2.css"
 ---
 
-```{r include=F}
-library(rmarkdown)
-knitr::opts_chunk$set(echo = FALSE)
-knitr::opts_chunk$set(include = FALSE)
-knitr::opts_chunk$set(engine.path = list(
-  python = '/usr/bin/python3',
-  ruby = '/usr/bin/ruby'
-))
-```
-## Snapshot: Staff vs Faculty
+We will examine the file `data/college_data.csv`. The file contains more than 160 different variables for the 395 doctoral universities in the US. The data was obtained from [Integrated Postsecondary Education Data System (IPEDS)](https://nces.ed.gov/ipeds/use-the-data). The variables correspond the most recent available academic year. In most of the cases, this mean 2018-19. However, some variables are from the 2017-18 year.
 
-```{r include=T, echo=T, fig.height=4, fig.align='center'}
+## Setup
+
++ We will include a large number of pictures. 
++ We don't want to specify for **every single** code chunk to center and stretch-to-fit every plot. 
++ Thus we **set** those global options from beforehand.
+
+```{r setup}
+knitr::opts_chunk$set(fig.align='center')
+knitr::opts_chunk$set(out.width='100%')
+```
+
++ Next we **load** the data and our plotting functions from `utils.R`.
+
+```{r data}
 source('utils/utils.R')
 data <- read.csv('data/college_data.csv')
-Y <- "Total.FTE.staff..DRVHR2018."
-X <- "Instructional..research.and.public.service.FTE..DRVHR2018."  
 ID <- "Institution.Name" 
 SZ <- "Total..enrollment..DRVEF2018." 
 carnegie <- "Carnegie.Classification..HD2018."
 landgrant <- "Land.Grant.Institution..HDNo0Yes8."
 sector <- "Sector.of.institution..HDPrivate0Public8."
+```
+
++ We will later be able to identify every data point with its institutional name and its total enrollment.
++ The plots can distinguish using two out of three criteria:
+    + `carnegie`: Carnegie Classification as of 2018:
+        + Very High Research
+        + High Research
+        + Research
+    + `landgrant`: If it is a landgrant institution or not.
+    + `sector`: Whether the institution is public or non-for-profit private.
+
+## Snapshot: Staff vs Faculty
+
+```{r staff_vs_faculty}
+Y <- "Total.FTE.staff..DRVHR2018."
+X <- "Instructional..research.and.public.service.FTE..DRVHR2018."  
+
 regression <- linregression_traditional(data,X,Y,carnegie)
+
 summary_reg <- summary(regression)
 rsquared <- summary_reg$r.squared
 coeffs <- summary_reg$coefficients
@@ -40,8 +60,8 @@ coeffs <- summary_reg$coefficients
 
 ## Use `ggplot2` instead: nicer plots
 
-```{r include=T, echo=T, fig.height=4, fig.align='center'}
-foo <- ggplotRegression(data,Y,X,carnegie,sector,'US Doctoral Universities')
+```{r }
+foo <- ggplotRegression(data,Y,X,carnegie,sector,ID,SZ,'US Doctoral Universities')
 foo[[1]]
 summary_reg <- summary(foo[[2]])
 rsquared <- summary_reg$r.squared
@@ -58,7 +78,7 @@ coeffs <- summary_reg$coefficients
     - **Do not** worry about it: **R** got your back.
     - `plotly` works well with `ggplot2`.
 
-```{r include=T, echo=T, out.width='100%', fig.align='center'}
+```{r }
 ggplotly(foo[[1]], tooltip = c('id', 'enroll', 'x', 'y'))
 ```
 
@@ -66,22 +86,93 @@ ggplotly(foo[[1]], tooltip = c('id', 'enroll', 'x', 'y'))
 - _Might_ have issues when converting HTML widgets to PDF.
 - Snapshot of widget based on `phantomJS`.
 
-```{r eval=F, echo=T, include=T}
+```{r webshot, eval=F}
 library(webshot)
 webshot::install_phantomjs()
 ```
 
 ## Look for other possible correlations
 
-```{r include=T, echo=T, fig.height=4, fig.align='center'}
-X <- "Admissions.yield...men..DRVADM2018." 
-Y <- "Admissions.yield...women..DRVADM2018." 
-foo <- ggplotRegression(data,Y,X,carnegie,sector,'US Doctoral Universities')
+```{r enrollment}
+X <- "Undergraduate.enrollment..DRVEF2018."  
+Y <- "Graduate.enrollment..DRVEF2018."  
+foo <- ggplotRegression(data,Y,X,carnegie,sector,ID,SZ,'US Doctoral Universities')
 foo[[1]]
 summary_reg <- summary(foo[[2]])
 rsquared <- summary_reg$r.squared
 coeffs <- summary_reg$coefficients
 ```
 
-+ We observe an $R^2$ value of `r rsquared`, which is quite high
-+ For every admitted male, we have `r round(coeffs[2,1])` admitted female.
++ We observe an $R^2$ value of `r rsquared`, which is low.
++ For every enrolled undergrad, we have `r round(coeffs[2,1])` enrolled grad student.
+
+#### Instead, let's look at full time
+
+```{r full_enrollment}
+X <- "Full.time.undergraduate.enrollment..DRVEF2018."  
+Y <-  "Full.time.graduate.enrollment..DRVEF2018."  
+foo <- ggplotRegression(data,Y,X,carnegie,sector,ID,SZ,'US Doctoral Universities')
+foo[[1]]
+summary_reg <- summary(foo[[2]])
+rsquared <- summary_reg$r.squared
+coeffs <- summary_reg$coefficients
+```
+
++ Considering full time enrollment doesn't make the trend clearer.
++ We observe an $R^2$ value of `r rsquared`, which remains low.
++ For every enrolled undergrad, we have `r round(coeffs[2,1])` enrolled grad student.
+
+## What about the number of degrees granted?
+
++ Are _Very High Research Activity_ institutions producing considerably more academic degrees than the rest of institutions?
+
+```{r phd_production, echo=F}
+PhD <- "Number.of.students.receiving.a.Doctor.s.degree..DRVC2018."
+MS <- "Number.of.students.receiving.a.Master.s.degree..DRVC2018."
+BS <- "Number.of.students.receiving.a.Bachelor.s.degree..DRVC2018."
+AS <- "Number.of.students.receiving.an.Associate.s.degree..DRVC2018."
+PB <- "Number.of.students.receiving.a.Postbaccalaureate.or.Post.master.s.certificate..DRVC2018."
+Cert4 <- "Number.of.students.receiving.a.certificate.of.1.but.less.than.4.years..DRVC2018."
+Cert1 <- "Number.of.students.receiving.a.certificate.of.less.than.1.year..DRVC2018."
+
+Men <- "Percent.admitted...men..DRVADM2018."
+Women <-  "Percent.admitted...women..DRVADM2018."
+
+GradT <- "Graduate.enrollment..DRVEF2018."
+UnderT <- "Undergraduate.enrollment..DRVEF2018."
+GradF <- "Full.time.graduate.enrollment..DRVEF2018."
+UnderF <- "Full.time.undergraduate.enrollment..DRVEF2018."
+Normalized <- "Students.receiving.a.PhD.normalized..DRVC2018."
+```
+```{r}
+p <- ggplotJitter(data, PhD, carnegie, sector, landgrant, ID, SZ)
+ggplotly(p, tooltip = c('id', 'enroll', 'y'))
+```
+
++ The VHR institutions have a clear higher output
++ But they also have a larger student body
++ What if we normalize with respect to the number of total enrolled graduate students (we lack the specific number of enrolled PhD students)?
++ Consider then the percentage
+$$ \frac{\#(\text{PhD degrees granted})}{\#(\text{Enrolled graduate students})}\times100 $$
+
+```{r}
+df <- data.frame(
+  data[c(carnegie,PhD,ID,SZ,sector,landgrant)],
+  Students.receiving.a.PhD.normalized..DRVC2018. = as.vector(unlist(data[PhD]/data[GradT]))*100
+)
+Normalized <- "Students.receiving.a.PhD.normalized..DRVC2018."
+
+p <- ggplotJitter(df, Normalized, carnegie, sector, landgrant, ID, SZ)
+ggplotly(p, tooltip = c('id', 'enroll', 'y'))
+```
+
+## Your Turn
+
++ Plot other possible linear relationships.
+    + Average price vs total enrollment.
+    + Instructional vs Research FTEs.
++ Examine bachelor and master output, both raw and normalized.
+
+
+
+

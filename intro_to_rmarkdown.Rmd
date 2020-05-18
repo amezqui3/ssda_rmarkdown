@@ -9,7 +9,7 @@ author:
    - https://egr.msu.edu/~amezqui3
 date: May 18th, 2020
 bibliography: biblio.bib
-csl: "css/harvard-cite-them-right.csl"
+csl: "csl/harvard-cite-them-right.csl"
 output: 
   ioslides_presentation:
     smaller: True
@@ -17,30 +17,27 @@ output:
     logo: "figs/cmse_logo_transparent.png"
 ---
 
-```{r include=F}
+```{r setup, include=F}
 library(rmarkdown)
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(include = FALSE)
-knitr::opts_chunk$set(engine.path = list(
-  python = '/usr/bin/python3',
-  ruby = '/usr/bin/ruby'
-))
+knitr::opts_chunk$set(engine.path = list(python = '/usr/bin/python3'))
 ```
 
 ## Overview
 
 1. Example
     1. From raw text to gorgeous HTML
-    2. General idea behind RMarkdown
-2. 3 Component chunks
+    1. General idea behind RMarkdown
+1. 3 Component chunks
     1. Metadata
-    2. Text (Markdown)
-    3. Code chunks
-3. Additional perks
+    1. Text (Markdown)
+    1. Code chunks
+1. Additional perks
     1. pandoc
-    2. BiBTeX and reference management
-    3. CSS customization
-    4. To the infinity and beyond
+    1. BiBTeX and reference management
+    1. CSS customization
+    1. To the infinity and beyond
 
 + This whole presentation (ioslides) was made **in RMarkdown**.
 
@@ -52,7 +49,7 @@ knitr::include_graphics("figs/rmarkdownhighlight.png")
 
 ## Snapshot: Staff vs Faculty
 
-```{r }
+```{r data_read}
 source('utils/utils.R')
 data <- read.csv('data/college_data.csv')
 Y <- "Total.FTE.staff..DRVHR2018."
@@ -61,10 +58,10 @@ carnegie <- "Carnegie.Classification..HD2018."
 landgrant <- "Land.Grant.Institution..HDNo0Yes8."
 sector <- "Sector.of.institution..HDPrivate0Public8."
 ```
-```{r include=T, echo=T, fig.height=4, fig.align='center'}
+```{r linear_regression, include=T, echo=T, fig.height=4, fig.align='center'}
 regression <- linregression_traditional(data,X,Y,carnegie)
 ```
-```{r }
+```{r results}
 summary_reg <- summary(regression)
 rsquared <- summary_reg$r.squared
 coeffs <- summary_reg$coefficients
@@ -78,6 +75,8 @@ coeffs <- summary_reg$coefficients
 knitr::include_graphics('figs/rmarkdownflow.png')
 ```
 
++ RMarkdown is WYSIWYM as opposed to WYSIWYG
+    + What you see is what you mean _vs_ get.
 + A single plain text document to produce
     + High quality reports: PDF, HTML, Word
     + High quality presentations: Slidy, ioslides, beamer, PowerPoint
@@ -101,20 +100,11 @@ install.packages('rmarkdown')
 ```
 ---
 title: Walking through RMarkdown
-author: 
-   - Erik Amézquita
-   - Computational Math, Science & Engineering
-   - Michigan State University
-   - " "
-   - amezqui3@msu.edu
-   - https://egr.msu.edu/~amezqui3
+author: Erik Amézquita
 date: May 18th, 2020
-bibliography: biblio.bib
-csl: harvard-cite-them-right.csl
 output: 
   ioslides_presentation:
     smaller: True
-    css: styles.css
     logo: "figs/cmse_logo_transparent.png"
 ---
 ```
@@ -122,28 +112,24 @@ output:
 
 ## Text = pandoc's markdown
 
+1. WYSIWYM (What you see is what you mean.)
 1. **Markdown is** a _markup language_: f^o^rma~t~ text ~~with some~~ `quick rules`.
     1. Look at the [previous reference](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) or at [pandoc's documentation](https://pandoc.org/MANUAL.html#pandocs-markdown). 
-    2. No more need to click here and there
+    1. No more need to click here and there
         + No need to use shortcuts
-
-Table Header  | Second Header
-------------- | -------------
-Tables        |  are
-literally     |  drawn
++ Ideal to take notes in class
++ Or to write quick lists in any text processor: notepad, gedit, RStudio, vim
 
 ```
-## 3 Components: Text = pandoc's markdown
+## Text = pandoc's markdown
 
+1. WYSIWYM (What you see is what you mean.)
 1. **Markdown is** a _markup language_: f^o^rma~t~ text ~~with some~~ `quick rules`.
     1. Look at the [previous reference](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) or at [pandoc's documentation](https://pandoc.org/MANUAL.html#pandocs-markdown). 
-    2. No more need to click here and there
+    1. No more need to click here and there
         + No need to use shortcuts
-
-Table Header  | Second Header
-------------- | -------------
-Tables        |  are
-literally     |  drawn
++ Ideal to take notes in class
++ Or to write quick lists in any text processor: notepad, gedit, RStudio, vim
 ```
 
 ## Text: Typeset math symbols with $\LaTeX$
@@ -198,7 +184,7 @@ knitr::opts_chunk$set(include = FALSE)
 knitr::opts_chunk$set(engine.path = list(python = '/usr/bin/python3'))
 ```
 
-```{r include=T, out.width = '85%'}
+```{r include=T, out.width = '85%', fig.align='center'}
 knitr::include_graphics("figs/rmarkdownslide.png")
 ```
 
@@ -271,7 +257,7 @@ knitr::include_graphics(c('figs/summary_md2.png', 'figs/summary_pdf2.png'))
 + To PDF, beamer, markdown, TeX, word, odt, rtf, html, etc.
 + Go to the [official pandoc documentation](https://pandoc.org/MANUAL.html) for more details.
 
-## Reference management with BiBTeX {.build}
+## Reference management with [BiBTeX](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html) {.build}
 
 + Insert and manage references and citations with a `.bib` text file.
 ```
@@ -291,8 +277,13 @@ knitr::include_graphics(c('figs/summary_md2.png', 'figs/summary_pdf2.png'))
 + Adding a `-` sign before `@` will omit the author: `[-@Xie2018]` generates [-@Xie2018]
 + [JabRef](http://www.jabref.org/) is an open-source GUI to manage BiBTeX bibliographies.
 + Add a `.csl` [style file](http://zotero.org/styles) in YAML preamble to change citation/reference styles.
-+ Use `citation("package-name")` to produce a BiBTeX entry if you want to reference a particular R package
-+ More information on citations [here](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
+
+## R comes with BiBTeX in mind
+
++ Use `citation("package-name")` to cite any R package with BiBTeX
+```{r bibtex, include=T, echo=T}
+citation('base')
+```
 
 ## CSS Customization {.build}
 
